@@ -1,5 +1,6 @@
 import type { NewsItem } from "#/types/news"
 import { NewsCard } from "./NewsCard"
+import { AnimateInGroup, AnimateInGroupItem } from "./AnimateInGroup"
 
 interface NewsListProps {
   items: NewsItem[]
@@ -23,15 +24,16 @@ export function NewsList({
   }
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <AnimateInGroup className="grid gap-4 sm:grid-cols-2" stagger={0.06}>
       {items.map((item) => (
-        <NewsCard
-          key={item.id}
-          item={item}
-          onDelete={onDelete}
-          showCategory={showCategory}
-        />
+        <AnimateInGroupItem key={item.id}>
+          <NewsCard
+            item={item}
+            onDelete={onDelete}
+            showCategory={showCategory}
+          />
+        </AnimateInGroupItem>
       ))}
-    </div>
+    </AnimateInGroup>
   )
 }

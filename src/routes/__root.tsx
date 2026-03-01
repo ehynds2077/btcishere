@@ -17,8 +17,8 @@ const navLinks = [
 function RootComponent() {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center gap-8">
+      <header className="border-b border-border border-t-2 border-t-primary bg-card/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2 no-underline">
             <Bitcoin className="h-6 w-6 text-primary" />
             <span className="font-bold text-foreground text-lg">
@@ -38,7 +38,7 @@ function RootComponent() {
           </nav>
         </div>
       </header>
-      <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+      <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-8">
         <Outlet />
       </main>
     </div>
