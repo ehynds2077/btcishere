@@ -94,56 +94,42 @@ function OverviewPage() {
               Bitcoin is <span className="text-gradient glow-pulse">here.</span>
             </h1>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
-              Over the last 24 months, every major US bank, the largest asset
-              managers, sovereign wealth funds, public pension systems, and
-              multiple national governments have taken Bitcoin positions. All of
-              it is on the public record. This site tracks that record.
+              Over the last few years, almost all major banks, asset managers,
+              and sovereign wealth funds are buying and building on Bitcoin.
+            </p>
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
+              See the evidence for yourself here. This is not an up to date
+              source of news, but instead, a curated look into Bitcoin adoption
+              and a sample of some of the historic milestones that have been
+              brewing.
             </p>
           </div>
         </section>
       </AnimateIn>
-
-      {/* The Banks */}
-      <AnimateIn>
-        <section className="section-glow grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
-          <div className="space-y-4 lg:sticky lg:top-28">
-            <p className="display-kicker">
-              <Landmark className="inline h-3.5 w-3.5 text-primary/50 mr-1.5 -mt-0.5" />
-              The Banks
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              The banks are coming
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Morgan Stanley, JPMorgan, Bank of America, Citi, have all entered
-              the bitcoin space. From custody to investing, bitcoin is being
-              integrated as a key part of our financial system
-            </p>
-          </div>
-          <div className="space-y-4">
-            <BankTimeline />
-          </div>
-        </section>
-      </AnimateIn>
-
-      <GlowDivider index={1} />
 
       {/* The ETFs */}
       <AnimateIn>
         <section className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
           <div className="space-y-4 lg:sticky lg:top-28">
             <p className="display-kicker">
-              <TrendingUp className="inline h-3.5 w-3.5 text-primary/50 mr-1.5 -mt-0.5" />
-              The ETFs
+              <TrendingUp className="inline h-7 w-7 text-primary/50 mr-1.5 -mt-0.5" />
+              Bitcoin ETFs
             </p>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
               {totalUsEtfBtc.toLocaleString()} BTC in US spot ETFs
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Spot Bitcoin ETFs launched in January 2024 and became the most
-              successful ETF category debut on record. BlackRock's IBIT alone
-              holds over 765,000 BTC. Combined, the US spot ETFs hold roughly 6%
-              of all Bitcoin that will ever exist.
+              After years of fighting Bitcoin, the SEC finally gave in and
+              approved Bitcoin ETFs (Exchange Traded Fund) for listing on the US
+              stock markets
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              While ETFs sacrifice the sovereingty of self-custody, they make it
+              easier for many people to buy Bitcoin. This marked the start of
+              institutional Bitcoin adoption. Now, anyone that owned SPY or QQQ
+              could just as easily buy Bitcoin. The ETFs opened the door to
+              state pension funds, universities, and retirees. Now anyone can
+              get Bitcoin exposure in their 401Ks
             </p>
           </div>
           <div className="space-y-4">
@@ -216,6 +202,30 @@ function OverviewPage() {
       </AnimateIn>
 
       <GlowDivider index={4} />
+      {/* The Banks */}
+      <AnimateIn>
+        <section className="section-glow grid gap-8 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
+          <div className="space-y-4 lg:sticky lg:top-28">
+            <p className="display-kicker">
+              <Landmark className="inline h-7 w-7 text-primary/50 mr-1.5 -mt-0.5" />
+              The Banks
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+              The banks are coming
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Morgan Stanley just launched their Bitcoin ETF, MSBT. Citi bank
+              announced they were building BTC custody by the end of this year.
+              Huntington bank is hiring for a digital assets manager.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <BankTimeline />
+          </div>
+        </section>
+      </AnimateIn>
+
+      <GlowDivider index={1} />
 
       {/* The Nations */}
       <AnimateIn>
