@@ -7,22 +7,29 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts"
-import { treasuryHoldings } from "#/lib/data"
+import { treasuryHoldings } from "#/lib/data/index"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
+
+const COLORS = [
+  "var(--chart-1)", "var(--chart-2)", "var(--chart-3)",
+  "var(--chart-4)", "var(--chart-5)", "var(--chart-6)",
+]
+
+const topHoldings = treasuryHoldings.slice(0, 10)
 
 export function TreasuryBarChart() {
   return (
     <Card>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
-          BTC Holdings by Company
+          Largest corporate holders
         </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
-              data={treasuryHoldings}
+              data={topHoldings}
               layout="vertical"
               margin={{ top: 0, right: 16, bottom: 0, left: 0 }}
             >
@@ -44,7 +51,7 @@ export function TreasuryBarChart() {
               <Tooltip
                 content={({ active, payload }) => {
                   if (!active || !payload?.length) return null
-                  const d = payload[0].payload as (typeof treasuryHoldings)[0]
+                  const d = payload[0].payload as (typeof topHoldings)[0]
                   return (
                     <div className="rounded-lg bg-popover border border-border px-3 py-2 text-sm shadow-md">
                       <p className="font-semibold">{d.name}</p>
@@ -55,9 +62,9 @@ export function TreasuryBarChart() {
                   )
                 }}
               />
-              <Bar dataKey="btcHeld" radius={[0, 4, 4, 0]}>
-                {treasuryHoldings.map((entry, i) => (
-                  <Cell key={i} fill={entry.color} />
+              <Bar dataKey="btcHeld" radius={[0, 4, 4, 0]} animationDuration={1200} animationEasing="ease-out">
+                {topHoldings.map((_, i) => (
+                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
               </Bar>
             </BarChart>

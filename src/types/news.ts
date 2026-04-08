@@ -1,10 +1,2 @@
-export type Category = "banks" | "institutional" | "treasuries" | "nations"
-
-export interface NewsItem {
-  id: string
-  title: string
-  description: string
-  sourceUrl: string
-  date: string
-  category: Category
-}
+// Re-export from canonical location for backwards compatibility
+export type { Category, NewsItem } from "#/lib/types"

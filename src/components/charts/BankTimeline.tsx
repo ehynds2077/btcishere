@@ -1,4 +1,5 @@
-import { bankMilestones } from "#/lib/data"
+import { bankMilestones } from "#/lib/data/index"
+import { formatYearMonth } from "#/lib/constants"
 import { AnimateInGroup, AnimateInGroupItem } from "#/components/AnimateInGroup"
 import { Badge } from "#/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
@@ -17,7 +18,7 @@ export function BankTimeline() {
     <Card>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
-          Bank Adoption Timeline
+          When each bank moved
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -30,7 +31,7 @@ export function BankTimeline() {
                 style={{ backgroundColor: categoryColorMap[m.category] ?? "var(--chart-1)" }}
               />
               <div className="text-xs text-muted-foreground font-medium">
-                {formatDate(m.date)}
+                {formatYearMonth(m.date)}
               </div>
               <h4 className="text-sm font-semibold mt-0.5">{m.bank}</h4>
               <p className="text-sm text-muted-foreground mt-0.5">{m.event}</p>
@@ -45,8 +46,3 @@ export function BankTimeline() {
   )
 }
 
-function formatDate(ym: string) {
-  const [y, m] = ym.split("-")
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  return `${months[parseInt(m, 10) - 1]} ${y}`
-}

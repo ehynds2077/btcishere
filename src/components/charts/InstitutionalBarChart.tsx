@@ -7,24 +7,16 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts"
-import { institutionalAllocations } from "#/lib/data"
+import { institutionalAllocations } from "#/lib/data/index"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
-
-const COLORS = [
-  "var(--chart-1)",
-  "var(--chart-2)",
-  "var(--chart-3)",
-  "var(--chart-4)",
-  "var(--chart-5)",
-  "var(--chart-3)",
-]
+import { CHART_COLORS } from "#/lib/constants"
 
 export function InstitutionalBarChart() {
   return (
     <Card>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
-          Institutional Capital Deployed ($M)
+          Disclosed institutional allocations ($M)
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -64,9 +56,9 @@ export function InstitutionalBarChart() {
                   )
                 }}
               />
-              <Bar dataKey="amountUsd" radius={[4, 4, 0, 0]}>
+              <Bar dataKey="amountUsd" radius={[4, 4, 0, 0]} animationDuration={1200} animationEasing="ease-out">
                 {institutionalAllocations.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                  <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />
                 ))}
               </Bar>
             </BarChart>

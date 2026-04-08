@@ -1,4 +1,4 @@
-import type { NationStat } from "#/lib/data"
+import type { NationStat } from "#/lib/types"
 import { Card, CardContent } from "#/components/ui/card"
 import { Badge } from "#/components/ui/badge"
 
@@ -22,6 +22,11 @@ export function NationCard({ nation }: NationCardProps) {
             <p className="text-sm text-muted-foreground mt-1">
               {nation.highlight}
             </p>
+            {nation.btcHeld != null && (
+              <p className="text-sm font-semibold text-primary mt-1">
+                {nation.btcHeld.toLocaleString()} BTC
+              </p>
+            )}
           </div>
         </div>
       </CardContent>

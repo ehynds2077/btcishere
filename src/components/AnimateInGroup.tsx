@@ -37,8 +37,8 @@ export function AnimateInGroupItem({ children, className }: AnimateInGroupItemPr
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+        hidden: { opacity: 0, y: 20, scale: 0.98, filter: "blur(4px)" },
+        visible: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
       }}
       className={className}
     >

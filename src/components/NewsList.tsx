@@ -4,16 +4,14 @@ import { AnimateInGroup, AnimateInGroupItem } from "./AnimateInGroup"
 
 interface NewsListProps {
   items: NewsItem[]
-  onDelete: (id: string) => void
   showCategory?: boolean
   emptyMessage?: string
 }
 
 export function NewsList({
   items,
-  onDelete,
   showCategory = false,
-  emptyMessage = "No news items yet. Add one to get started!",
+  emptyMessage = "No news items yet.",
 }: NewsListProps) {
   if (items.length === 0) {
     return (
@@ -29,7 +27,6 @@ export function NewsList({
         <AnimateInGroupItem key={item.id}>
           <NewsCard
             item={item}
-            onDelete={onDelete}
             showCategory={showCategory}
           />
         </AnimateInGroupItem>

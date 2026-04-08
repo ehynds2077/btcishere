@@ -3,7 +3,7 @@ import {
   TOTAL_BTC_SUPPLY,
   totalTreasuryBtc,
   treasurySupplyPct,
-} from "#/lib/data"
+} from "#/lib/data/index"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
 
 const data = [
@@ -31,6 +31,8 @@ export function SupplyDonut() {
                 outerRadius="80%"
                 dataKey="value"
                 strokeWidth={0}
+                animationDuration={1200}
+                animationEasing="ease-out"
               >
                 <Cell fill="var(--chart-1)" />
                 <Cell fill="var(--muted)" />

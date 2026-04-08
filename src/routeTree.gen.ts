@@ -11,8 +11,16 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TreasuriesRouteImport } from './routes/treasuries'
 import { Route as NationsRouteImport } from './routes/nations'
+import { Route as MoneyRouteImport } from './routes/money'
+import { Route as MethodRouteImport } from './routes/method'
 import { Route as InstitutionalRouteImport } from './routes/institutional'
+import { Route as HoldersRouteImport } from './routes/holders'
+import { Route as EvidenceRouteImport } from './routes/evidence'
+import { Route as EtfsRouteImport } from './routes/etfs'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as BanksRouteImport } from './routes/banks'
+import { Route as AdoptionRouteImport } from './routes/adoption'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TreasuriesRoute = TreasuriesRouteImport.update({
@@ -25,14 +33,54 @@ const NationsRoute = NationsRouteImport.update({
   path: '/nations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MoneyRoute = MoneyRouteImport.update({
+  id: '/money',
+  path: '/money',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodRoute = MethodRouteImport.update({
+  id: '/method',
+  path: '/method',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const InstitutionalRoute = InstitutionalRouteImport.update({
   id: '/institutional',
   path: '/institutional',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HoldersRoute = HoldersRouteImport.update({
+  id: '/holders',
+  path: '/holders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtfsRoute = EtfsRouteImport.update({
+  id: '/etfs',
+  path: '/etfs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BanksRoute = BanksRouteImport.update({
   id: '/banks',
   path: '/banks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdoptionRoute = AdoptionRouteImport.update({
+  id: '/adoption',
+  path: '/adoption',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,44 +91,110 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/adoption': typeof AdoptionRoute
   '/banks': typeof BanksRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/etfs': typeof EtfsRoute
+  '/evidence': typeof EvidenceRoute
+  '/holders': typeof HoldersRoute
   '/institutional': typeof InstitutionalRoute
+  '/method': typeof MethodRoute
+  '/money': typeof MoneyRoute
   '/nations': typeof NationsRoute
   '/treasuries': typeof TreasuriesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/adoption': typeof AdoptionRoute
   '/banks': typeof BanksRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/etfs': typeof EtfsRoute
+  '/evidence': typeof EvidenceRoute
+  '/holders': typeof HoldersRoute
   '/institutional': typeof InstitutionalRoute
+  '/method': typeof MethodRoute
+  '/money': typeof MoneyRoute
   '/nations': typeof NationsRoute
   '/treasuries': typeof TreasuriesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/adoption': typeof AdoptionRoute
   '/banks': typeof BanksRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/etfs': typeof EtfsRoute
+  '/evidence': typeof EvidenceRoute
+  '/holders': typeof HoldersRoute
   '/institutional': typeof InstitutionalRoute
+  '/method': typeof MethodRoute
+  '/money': typeof MoneyRoute
   '/nations': typeof NationsRoute
   '/treasuries': typeof TreasuriesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/banks' | '/institutional' | '/nations' | '/treasuries'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/adoption'
+    | '/banks'
+    | '/disclaimer'
+    | '/etfs'
+    | '/evidence'
+    | '/holders'
+    | '/institutional'
+    | '/method'
+    | '/money'
+    | '/nations'
+    | '/treasuries'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/banks' | '/institutional' | '/nations' | '/treasuries'
+  to:
+    | '/'
+    | '/about'
+    | '/adoption'
+    | '/banks'
+    | '/disclaimer'
+    | '/etfs'
+    | '/evidence'
+    | '/holders'
+    | '/institutional'
+    | '/method'
+    | '/money'
+    | '/nations'
+    | '/treasuries'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/adoption'
     | '/banks'
+    | '/disclaimer'
+    | '/etfs'
+    | '/evidence'
+    | '/holders'
     | '/institutional'
+    | '/method'
+    | '/money'
     | '/nations'
     | '/treasuries'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdoptionRoute: typeof AdoptionRoute
   BanksRoute: typeof BanksRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  EtfsRoute: typeof EtfsRoute
+  EvidenceRoute: typeof EvidenceRoute
+  HoldersRoute: typeof HoldersRoute
   InstitutionalRoute: typeof InstitutionalRoute
+  MethodRoute: typeof MethodRoute
+  MoneyRoute: typeof MoneyRoute
   NationsRoute: typeof NationsRoute
   TreasuriesRoute: typeof TreasuriesRoute
 }
@@ -101,6 +215,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/money': {
+      id: '/money'
+      path: '/money'
+      fullPath: '/money'
+      preLoaderRoute: typeof MoneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/method': {
+      id: '/method'
+      path: '/method'
+      fullPath: '/method'
+      preLoaderRoute: typeof MethodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/institutional': {
       id: '/institutional'
       path: '/institutional'
@@ -108,11 +236,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstitutionalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/holders': {
+      id: '/holders'
+      path: '/holders'
+      fullPath: '/holders'
+      preLoaderRoute: typeof HoldersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etfs': {
+      id: '/etfs'
+      path: '/etfs'
+      fullPath: '/etfs'
+      preLoaderRoute: typeof EtfsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/banks': {
       id: '/banks'
       path: '/banks'
       fullPath: '/banks'
       preLoaderRoute: typeof BanksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adoption': {
+      id: '/adoption'
+      path: '/adoption'
+      fullPath: '/adoption'
+      preLoaderRoute: typeof AdoptionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -127,8 +297,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdoptionRoute: AdoptionRoute,
   BanksRoute: BanksRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  EtfsRoute: EtfsRoute,
+  EvidenceRoute: EvidenceRoute,
+  HoldersRoute: HoldersRoute,
   InstitutionalRoute: InstitutionalRoute,
+  MethodRoute: MethodRoute,
+  MoneyRoute: MoneyRoute,
   NationsRoute: NationsRoute,
   TreasuriesRoute: TreasuriesRoute,
 }
