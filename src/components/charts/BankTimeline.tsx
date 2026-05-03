@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react"
 import { bankMilestones } from "#/lib/data/index"
 import { formatYearMonth } from "#/lib/constants"
 import { AnimateInGroup, AnimateInGroupItem } from "#/components/AnimateInGroup"
@@ -35,9 +36,20 @@ export function BankTimeline() {
               </div>
               <h4 className="text-sm font-semibold mt-0.5">{m.bank}</h4>
               <p className="text-sm text-muted-foreground mt-0.5">{m.event}</p>
-              <Badge variant="secondary" className="mt-1.5 text-xs capitalize">
-                {m.category}
-              </Badge>
+              <div className="mt-1.5 flex items-center gap-2">
+                <Badge variant="secondary" className="text-xs capitalize">
+                  {m.category}
+                </Badge>
+                <a
+                  href={m.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                >
+                  <ExternalLink className="h-3 w-3" />
+                  Source
+                </a>
+              </div>
             </AnimateInGroupItem>
           ))}
         </AnimateInGroup>

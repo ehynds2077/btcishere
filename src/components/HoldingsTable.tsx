@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react"
+import { ExternalLink } from "lucide-react"
 import { treasuryHoldings } from "#/lib/data/index"
 import type { TreasuryHolding } from "#/lib/types"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
@@ -87,6 +88,7 @@ export function HoldingsTable() {
                 <th className={thClass} onClick={() => toggleSort("country")}>
                   Country <SortIcon active={sortKey === "country"} dir={sortDir} />
                 </th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-muted-foreground">Source</th>
               </tr>
             </thead>
             <tbody>
@@ -111,6 +113,17 @@ export function HoldingsTable() {
                     </Badge>
                   </td>
                   <td className="px-3 py-2 text-muted-foreground">{h.country}</td>
+                  <td className="px-3 py-2">
+                    <a
+                      href={h.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                      aria-label={`Source for ${h.name} holdings`}
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </td>
                 </tr>
               ))}
             </tbody>

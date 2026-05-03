@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { AnimateIn } from "#/components/AnimateIn"
 import { AdoptionTimeline } from "#/components/charts/AdoptionTimeline"
 import { NewsList } from "#/components/NewsList"
-import { allNews, getNewsByCategory } from "#/lib/news"
+import { getNewsByCategory } from "#/lib/news"
 import { CATEGORY_LABELS } from "#/lib/constants"
 import type { Category } from "#/types/news"
 

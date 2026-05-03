@@ -1,40 +1,44 @@
 import type { Category, NewsItem } from "#/types/news"
 
+// Each item links to the specific article that reported the event.
+// Items that previously linked to news-site homepages have been
+// replaced with the actual reporting URL — or removed if no
+// authoritative source could be found.
 const newsData: NewsItem[] = [
   // Banks
   {
     id: "bank-1",
-    title: "Citigroup building Bitcoin custody for 2026 launch",
+    title: "Citi targets 2026 launch for institutional Bitcoin custody",
     description:
-      "Citigroup is developing a Bitcoin custody service for institutional clients, targeting a 2026 launch as Wall Street races to meet demand for digital asset infrastructure.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2025-10-14",
+      "Citigroup detailed plans for an institutional Bitcoin custody service that integrates BTC into the same custody, reporting and tax frameworks it uses for traditional assets. The platform is in development for a 2026 rollout.",
+    sourceUrl: "https://www.coindesk.com/business/2026/02/27/citi-and-morgan-stanley-expand-bitcoin-and-crypto-custody-trading-and-tokenization-efforts",
+    date: "2026-02-27",
     category: "banks",
   },
   {
     id: "bank-2",
     title: "JPMorgan exploring crypto trading for institutional clients",
     description:
-      "JPMorgan Chase is actively exploring offering direct cryptocurrency trading to its institutional clients, a significant reversal from CEO Jamie Dimon's long-standing skepticism of digital assets.",
-    sourceUrl: "https://fortune.com",
-    date: "2025-12-08",
+      "JPMorgan's markets division is assessing direct crypto trading and derivatives products for institutional clients — a notable shift from CEO Jamie Dimon's long-standing skepticism. The bank already accepts Bitcoin ETFs as loan collateral.",
+    sourceUrl: "https://fortune.com/2025/12/23/jpmorgan-to-allow-crypto-trading-for-institutional-clients/",
+    date: "2025-12-22",
     category: "banks",
   },
   {
     id: "bank-3",
-    title: "Morgan Stanley E-Trade to offer crypto trading + national crypto trust",
+    title: "Morgan Stanley to enable Bitcoin trading on E*Trade in H1 2026",
     description:
-      "Morgan Stanley's E-Trade platform is preparing to launch cryptocurrency trading for retail investors, while the firm establishes a national crypto trust to serve institutional custody needs.",
-    sourceUrl: "https://www.pymnts.com",
+      "Morgan Stanley is preparing to roll out crypto trading on E*Trade in the first half of 2026, partnering with Zerohash for liquidity, custody, and settlement. Initial coverage will include Bitcoin, Ethereum, and Solana.",
+    sourceUrl: "https://bitcoinmagazine.com/news/morgan-stanley-to-enable-bitcoin-trading-for-etrade-clients-in-first-half-of-2026",
     date: "2026-02-10",
     category: "banks",
   },
   {
     id: "bank-4",
-    title: "Goldman Sachs discloses $2.36B crypto ETF exposure",
+    title: "Goldman Sachs holds ~$1.06B in spot Bitcoin ETFs (Q4 2025 13F)",
     description:
-      "Goldman Sachs revealed $2.36 billion in cryptocurrency ETF holdings in its Q4 2025 13F filing, including major positions in Bitcoin and Ethereum spot ETFs, signaling deep institutional conviction.",
-    sourceUrl: "https://finance.yahoo.com",
+      "Goldman Sachs's most recent 13F discloses 21.2M shares across spot Bitcoin ETFs valued at roughly $1.06B, down from $1.57B at the prior peak. The bank has also filed for its own Bitcoin Premium Income ETF.",
+    sourceUrl: "https://www.theblock.co/post/389332/goldman-sachs-trims-bitcoin-etf-exposure-q4",
     date: "2026-02-14",
     category: "banks",
   },
@@ -42,217 +46,199 @@ const newsData: NewsItem[] = [
     id: "bank-5",
     title: "Bank of America greenlights 1–4% Bitcoin allocation for wealth clients",
     description:
-      "Bank of America's wealth management division has approved financial advisors to recommend a 1–4% portfolio allocation to Bitcoin for eligible clients, a landmark move from one of America's largest banks.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2026-01-22",
+      "Effective January 5, 2026, Bank of America's CIO authorized 15,000+ Merrill, Private Bank, and Merrill Edge advisors to proactively recommend a 1–4% portfolio allocation to Bitcoin via approved ETFs (IBIT, FBTC, BITB, BTC).",
+    sourceUrl: "https://www.coindesk.com/business/2025/12/02/bank-of-america-greenlights-wealth-advisors-to-recommend-up-to-4-bitcoin-allocation",
+    date: "2026-01-05",
     category: "banks",
   },
 
   // Institutional
   {
     id: "inst-1",
-    title: "Harvard endowment holds $443M IBIT position",
+    title: "Harvard discloses $443M IBIT position, then trims to $266M",
     description:
-      "Harvard Management Company disclosed a $443 million position in BlackRock's iShares Bitcoin Trust (IBIT), making it the largest publicly known Bitcoin ETF holding by any university endowment.",
-    sourceUrl: "https://www.coindesk.com",
+      "Harvard Management Co. reported 6.81M shares of IBIT (~$443M) in its Q3 2025 13F — its largest reported equity position. The Q4 filing then trimmed the stake to 5.35M shares ($266M).",
+    sourceUrl: "https://www.theblock.co/post/389996/harvard-bitcoin-ether-etf-holdings",
     date: "2025-11-15",
     category: "institutional",
   },
   {
     id: "inst-2",
-    title: "Abu Dhabi sovereign funds hold $1B+ in IBIT",
+    title: "Abu Dhabi funds top $1B in IBIT after Q4 13Fs",
     description:
-      "Abu Dhabi's Mubadala Investment Company and Abu Dhabi Investment Council (ADIC) hold a combined $1 billion+ position in BlackRock's IBIT, representing one of the largest sovereign wealth fund allocations to Bitcoin.",
-    sourceUrl: "https://zycrypto.com",
-    date: "2025-12-20",
+      "Mubadala lifted its IBIT stake to 12.7M shares ($630.6M) in Q4 2025, a 46% increase from Q3. Combined with Al Warda Investments, Abu Dhabi sovereign exposure to IBIT crossed $1B.",
+    sourceUrl: "https://www.coindesk.com/markets/2026/02/17/abu-dhabi-funds-bought-the-bitcoin-dip-as-they-increased-exposure-to-blackrock-s-ibit",
+    date: "2026-02-17",
     category: "institutional",
   },
   {
     id: "inst-3",
-    title: "Dartmouth endowment takes $10M IBIT position",
+    title: "Dartmouth takes new $10M IBIT position",
     description:
-      "Dartmouth College's investment office disclosed a $10 million position in BlackRock's IBIT, joining a growing wave of Ivy League endowments gaining Bitcoin exposure through spot ETFs.",
-    sourceUrl: "https://bitcoinist.com",
-    date: "2026-01-18",
+      "Trustees of Dartmouth College reported 201,531 shares of IBIT (~$10M) and a smaller Grayscale Ethereum Mini Trust position as of December 31, 2025 — both new positions.",
+    sourceUrl: "https://www.pionline.com/asset-management/exchange-traded-funds/pi-dartmouth-college-grayscale-ethereum-blackrock-bitcoin-etfs-december-31-2025/",
+    date: "2026-02-14",
     category: "institutional",
   },
   {
     id: "inst-4",
-    title: "Brown University doubles IBIT holdings to $13M",
+    title: "Brown becomes first Ivy League to disclose direct Bitcoin ETF holding",
     description:
-      "Brown University's endowment doubled its iShares Bitcoin Trust position to $13 million in Q2 2025, reflecting growing confidence in Bitcoin as a long-term portfolio diversifier among elite university endowments.",
-    sourceUrl: "https://www.nasdaq.com",
-    date: "2025-06-30",
+      "Brown University's Q1 2025 13F disclosed 105,000 IBIT shares worth $4.9M — a new position acquired between January and March 2025.",
+    sourceUrl: "https://www.nasdaq.com/articles/brown-university-bought-and-owns-49-million-blackrocks-bitcoin-etf",
+    date: "2025-05-02",
     category: "institutional",
   },
   {
     id: "inst-5",
-    title: "Emory University holds $52M in Grayscale Bitcoin Mini Trust",
+    title: "Emory University ups Grayscale Bitcoin Mini Trust stake to $52M",
     description:
-      "Emory University disclosed a $52 million position in the Grayscale Bitcoin Mini Trust (BTC), one of the largest direct Bitcoin fund allocations by any U.S. university endowment.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2025-09-15",
+      "Emory's Q3 2025 13F shows 1,023,417 shares of Grayscale's BTC Mini Trust (~$51.8M), a 91% increase, plus a small IBIT holding. BTC is now ~33% of its 13F-reportable book.",
+    sourceUrl: "https://www.coindesk.com/markets/2025/11/13/emory-doubles-down-on-bitcoin-with-usd52m-grayscale-bet",
+    date: "2025-11-13",
+    category: "institutional",
+  },
+  {
+    id: "inst-6",
+    title: "Wisconsin pension liquidates entire $300M IBIT stake in Q1 2025",
+    description:
+      "After being the first state pension to disclose a spot BTC ETF position (peaked at $321M in Feb 2025), the State of Wisconsin Investment Board sold its entire IBIT holding during Q1 2025 amid tariff turbulence.",
+    sourceUrl: "https://www.coindesk.com/markets/2025/05/16/wisconsin-sells-entire-350m-spot-bitcoin-etf-stake",
+    date: "2025-05-16",
     category: "institutional",
   },
 
   // Treasuries
   {
     id: "treas-1",
-    title: "Strategy holds ~718K BTC — 3.4% of all Bitcoin",
+    title: "Strategy crosses 818,000 BTC after $255M April buy",
     description:
-      "Strategy (formerly MicroStrategy) now holds approximately 718,000 BTC worth over $70 billion, representing roughly 3.4% of all Bitcoin that will ever exist. The company continues its aggressive accumulation under executive chairman Michael Saylor.",
-    sourceUrl: "https://www.strategy.com",
-    date: "2026-02-24",
+      "Strategy disclosed a 3,273-BTC purchase for $255M during the week ending April 26, 2026, lifting its treasury to 818,334 BTC (acquired for ~$61.81B at an average of $75,537/BTC).",
+    sourceUrl: "https://www.coindesk.com/markets/2026/04/27/michael-saylor-s-strategy-buys-3-273-bitcoin-as-it-inches-closer-to-its-1-million-target",
+    date: "2026-04-27",
     category: "treasuries",
   },
   {
     id: "treas-2",
-    title: "Twenty One Capital launches with ~43.5K BTC",
+    title: "Twenty One Capital debuts via SPAC with ~43.5K BTC",
     description:
-      "Twenty One Capital (XXI) launched as a publicly traded Bitcoin treasury company backed by Tether and SoftBank, debuting with approximately 43,500 BTC on its balance sheet and a mandate to accumulate more.",
-    sourceUrl: "https://finance.yahoo.com",
+      "Twenty One Capital (XXI), backed by Tether, SoftBank, and Cantor Fitzgerald, debuted via SPAC in December 2025 with more than 40,000 BTC on its balance sheet. Holdings now stand at 43,514 BTC.",
+    sourceUrl: "https://www.tether.io/news/tether-bitfinex-and-softbank-group-back-launch-of-twenty-one-a-new-bitcoin-native-public-company/",
     date: "2025-12-05",
     category: "treasuries",
   },
   {
     id: "treas-3",
-    title: "MetaPlanet holds ~35K BTC, targets 210K by 2027",
+    title: "Metaplanet adds 5,075 BTC in Q1 2026, jumps to 40,177 BTC total",
     description:
-      "Japanese investment firm MetaPlanet has accumulated approximately 35,000 BTC and announced an ambitious target of 210,000 BTC by 2027, positioning itself as Asia's largest corporate Bitcoin holder.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2025-12-18",
+      "Tokyo-listed Metaplanet (3350.T) added 5,075 BTC in Q1 2026 and now holds 40,177 BTC, becoming the third-largest corporate BTC holder. Its '555 Million Plan' targets 100K BTC by year-end and 210K by end-2027.",
+    sourceUrl: "https://www.theblock.co/post/357254/metaplanet-5-4-billion-usd-equity-raise-bitcoin-1-per-cent-club",
+    date: "2026-04-02",
     category: "treasuries",
   },
   {
     id: "treas-4",
-    title: "Strive acquires Semler Scientific, combined ~12.8K BTC",
+    title: "Tesla holds steady at 11,509 BTC; reports $173M Q1 fair-value loss",
     description:
-      "Vivek Ramaswamy's Strive Asset Management completed its acquisition of Semler Scientific, combining their Bitcoin treasuries to hold approximately 12,800 BTC as a core reserve asset.",
-    sourceUrl: "https://www.theblock.co",
-    date: "2026-01-30",
-    category: "treasuries",
-  },
-  {
-    id: "treas-5",
-    title: "American Bitcoin (ABTC) holds ~5.8K BTC on Nasdaq",
-    description:
-      "American Bitcoin (ABTC), a Nasdaq-listed Bitcoin mining and treasury company, holds approximately 5,800 BTC on its balance sheet with a strategy of holding all mined Bitcoin rather than selling.",
-    sourceUrl: "https://fortune.com",
-    date: "2025-09-22",
+      "Tesla made no changes to its 11,509-BTC stack in Q1 2026 and reported a $173M unrealized loss on digital assets as BTC fell from ~$90K to ~$68K over the quarter.",
+    sourceUrl: "https://www.coindesk.com/markets/2026/04/22/elon-musk-s-tesla-reports-unchanged-bitcoin-holdings-books-usd173-million-digital-asset-loss",
+    date: "2026-04-22",
     category: "treasuries",
   },
 
   // Money (STRC)
   {
     id: "money-1",
-    title: "STRC dividend ratchets to 11.5% — highest since launch",
+    title: "STRC dividend ratchets to 11.5% — seventh hike since launch",
     description:
-      "Strategy's perpetual preferred stock STRC has increased its annualized dividend rate to 11.5%, up from the initial 8% at launch. The ratchet mechanism automatically adjusts the yield as Bitcoin holdings grow, creating a self-reinforcing demand loop.",
-    sourceUrl: "https://www.strategy.com",
-    date: "2026-02-28",
+      "Strategy raised the variable rate on its STRC perpetual preferred stock to 11.5% for the March 2026 distribution, the seventh consecutive monthly hike since the security IPO'd in July 2025 at 8%.",
+    sourceUrl: "https://www.coindesk.com/markets/2026/03/01/strategy-lifts-strc-dividend-to-11-5-as-mstr-extends-monthly-losing-streak-to-8",
+    date: "2026-03-01",
     category: "money",
   },
   {
     id: "money-2",
-    title: "STRC raises record $300M in January issuance",
+    title: "STRC becomes the world's largest preferred stock in under a year",
     description:
-      "Strategy's STRC preferred stock set a monthly issuance record of approximately $300 million in January 2026, as yield-seeking investors pour capital into the Bitcoin-backed instrument that now offers 11.5% annualized returns.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2026-01-31",
+      "Saylor reported that STRC, IPO'd in July 2025, has grown into the largest preferred stock in the world by market value — funded by retail and institutional yield demand and used to buy BTC.",
+    sourceUrl: "https://news.bitcoin.com/strategys-strc-becomes-worlds-largest-preferred-stock-in-under-one-year-saylor-says/",
+    date: "2026-04-15",
     category: "money",
   },
   {
     id: "money-3",
-    title: "Strategy announces 'Buck' stablecoin backed by STRC yield",
+    title: "Buck Labs launches BUCK 'savings coin' backed by Strategy shares",
     description:
-      "Strategy has announced plans for Buck, a dollar-pegged stablecoin that passes through yield from STRC preferred shares to holders. The product aims to bring Bitcoin-backed yield to everyday transactions.",
-    sourceUrl: "https://fortune.com",
-    date: "2026-02-15",
-    category: "money",
-  },
-  {
-    id: "money-4",
-    title: "STRC surpasses $2B total capital raised",
-    description:
-      "Total capital raised through Strategy's STRC preferred stock issuance has surpassed $2 billion since its October 2025 launch, with proceeds used to purchase over 21,000 BTC for the company's treasury.",
-    sourceUrl: "https://finance.yahoo.com",
-    date: "2026-02-20",
+      "Buck Labs introduced BUCK in early 2026 — a yield-bearing token (target ~7% APY) backed by Strategy stock, with rewards funded indirectly by the Buck Foundation's STRC preferred holdings. It is not pegged to $1 and is not marketed as a stablecoin.",
+    sourceUrl: "https://www.coindesk.com/business/2026/01/05/buck-launches-bitcoin-linked-savings-coin-tied-to-michael-saylor-s-strategy",
+    date: "2026-01-05",
     category: "money",
   },
 
   // ETFs
   {
     id: "etf-1",
-    title: "BlackRock's IBIT crosses 765K BTC — largest Bitcoin fund ever",
+    title: "BlackRock IBIT crosses 806K BTC; Strategy nudges back ahead",
     description:
-      "BlackRock's iShares Bitcoin Trust (IBIT) now holds over 765,000 BTC worth approximately $76 billion, making it the largest Bitcoin investment vehicle in history and surpassing all gold ETFs in net inflows.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2026-02-18",
+      "IBIT added another 12,400 BTC to reach 806,700 BTC and roughly 49% of US spot Bitcoin ETF assets — but Strategy's 818K-BTC stack now leads the global single-entity holders.",
+    sourceUrl: "https://finance.yahoo.com/markets/crypto/articles/blackrock-bitcoin-etf-holdings-hit-203000203.html",
+    date: "2026-04-21",
     category: "etfs",
   },
   {
     id: "etf-2",
-    title: "US spot Bitcoin ETFs collectively hold 1.27M BTC",
+    title: "Morgan Stanley launches MSBT at 0.14% — the cheapest BTC ETF",
     description:
-      "The 12 US spot Bitcoin ETFs now collectively hold approximately 1.27 million BTC, representing over 6% of the total 21 million supply cap, with record inflows continuing into 2026.",
-    sourceUrl: "https://finance.yahoo.com",
-    date: "2026-02-05",
+      "Morgan Stanley Investment Management launched the Morgan Stanley Bitcoin Trust (NYSE Arca: MSBT) in April 2026 with a 0.14% sponsor fee, the lowest among US spot Bitcoin ETFs.",
+    sourceUrl: "https://fortune.com/2026/04/08/morgan-stanley-bitcoin-etf-msbt-launch-ethereum-solana/",
+    date: "2026-04-08",
     category: "etfs",
   },
   {
     id: "etf-3",
-    title: "Spot Bitcoin ETFs mark first anniversary with $100B+ AUM",
+    title: "Spot Bitcoin ETFs approved by the SEC",
     description:
-      "One year after SEC approval, spot Bitcoin ETFs have amassed over $100 billion in assets under management, making them the most successful ETF launch category in history.",
-    sourceUrl: "https://www.bloomberg.com",
-    date: "2025-01-10",
-    category: "etfs",
-  },
-  {
-    id: "etf-4",
-    title: "BlackRock launches European Bitcoin ETP (IB1T)",
-    description:
-      "BlackRock expands its Bitcoin product lineup to Europe with the iShares Bitcoin ETP (IB1T), targeting institutional investors seeking regulated BTC exposure outside the US market.",
-    sourceUrl: "https://www.ft.com",
-    date: "2025-09-15",
-    category: "etfs",
-  },
-  {
-    id: "etf-5",
-    title: "European Bitcoin ETPs see record inflows in Q4 2025",
-    description:
-      "European-listed Bitcoin exchange-traded products attracted record quarterly inflows exceeding $2 billion in Q4 2025, led by CoinShares, 21Shares, and BlackRock's newly launched IB1T.",
-    sourceUrl: "https://www.coindesk.com",
-    date: "2025-12-28",
+      "On January 10, 2024, the SEC issued an approval order clearing 11 spot Bitcoin ETFs to begin trading — opening the largest channel for institutional Bitcoin access in history.",
+    sourceUrl: "https://www.sec.gov/files/rules/sro/nysearca/2024/34-99306.pdf",
+    date: "2024-01-10",
     category: "etfs",
   },
 
   // Nations
   {
     id: "nation-1",
-    title: "El Salvador's Bitcoin profit exceeds $300M",
+    title: "El Salvador rolls back Bitcoin legal tender under IMF deal",
     description:
-      "El Salvador's national Bitcoin portfolio has generated over $300 million in unrealized profits since the country adopted BTC as legal tender in 2021, vindicating President Bukele's controversial strategy.",
-    sourceUrl: "https://www.presidencia.gob.sv",
-    date: "2025-12-01",
+      "Under a $1.4B IMF loan agreement, El Salvador's Congress amended the Bitcoin Law in January 2025 — removing mandatory merchant acceptance and the 'currency' designation. Public-sector use is confined; Bitcoin Office continues daily purchases.",
+    sourceUrl: "https://www.reuters.com/world/americas/el-salvador-congress-approves-bitcoin-law-reform-meet-imf-conditions-2025-01-29/",
+    date: "2025-01-29",
     category: "nations",
   },
   {
     id: "nation-2",
-    title: "Bhutan's Druk Holding mines and holds Bitcoin",
+    title: "Bhutan has sold ~70% of its Bitcoin in 18 months",
     description:
-      "Bhutan's sovereign wealth fund, Druk Holding & Investments, has built significant Bitcoin mining operations powered by the country's abundant hydroelectric energy, quietly accumulating BTC as a national reserve asset.",
-    sourceUrl: "https://www.dhi.bt",
-    date: "2025-05-22",
+      "Druk Holding & Investments has reduced Bhutan's sovereign BTC stack from ~13,000 BTC in October 2024 to roughly 3,954 BTC, with sales reportedly funding the Gelephu Mindfulness City project. Hydropower-backed mining inflows have also stopped.",
+    sourceUrl: "https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too",
+    date: "2026-04-11",
     category: "nations",
   },
   {
     id: "nation-3",
-    title: "Argentina considers Bitcoin legal tender legislation",
+    title: "Trump establishes US Strategic Bitcoin Reserve",
     description:
-      "Argentina's congress introduced a bill to recognize Bitcoin as legal tender, following El Salvador's lead as the country seeks alternatives amid persistent inflation and currency devaluation.",
-    sourceUrl: "https://www.argentina.gob.ar",
-    date: "2025-11-28",
+      "Executive Order 14233 (March 6, 2025) creates a Strategic Bitcoin Reserve and a separate Digital Asset Stockpile within Treasury. The order directs no further sales of BTC forfeited in criminal/civil proceedings.",
+    sourceUrl: "https://www.whitehouse.gov/presidential-actions/2025/03/establishment-of-the-strategic-bitcoin-reserve-and-united-states-digital-asset-stockpile/",
+    date: "2025-03-06",
+    category: "nations",
+  },
+  {
+    id: "nation-4",
+    title: "Czech National Bank approves Bitcoin reserve study",
+    description:
+      "CNB Governor Aleš Michl announced in early 2025 that the bank board approved a study of allocating up to 5% of the central bank's ~€140B reserves to Bitcoin and other alternative assets. No purchase has been made.",
+    sourceUrl: "https://www.reuters.com/markets/europe/czech-central-bank-explore-bitcoin-other-asset-classes-governor-says-2025-01-30/",
+    date: "2025-01-30",
     category: "nations",
   },
 ]
