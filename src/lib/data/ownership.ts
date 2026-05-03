@@ -14,9 +14,10 @@ export interface HolderRecord {
   vehicle?: string
   note?: string
   disclosure: "reported" | "estimated"
+  sourceUrl: string
 }
 
-const BTC_PRICE_ASSUMED_USD = 100_000
+const BTC_PRICE_ASSUMED_USD = 80_000
 
 function usdMillionsToBtc(amountUsdM: number): number {
   return Math.round((amountUsdM * 1_000_000) / BTC_PRICE_ASSUMED_USD)
@@ -36,6 +37,7 @@ const directEtfHolders: HolderRecord[] = allEtfs.map((etf) => ({
   indirectExposureBtc: 0,
   vehicle: etf.name,
   disclosure: etf.btcHeld != null ? "reported" : "estimated",
+  sourceUrl: etf.sourceUrl,
 }))
 
 const directTreasuryHolders: HolderRecord[] = treasuryHoldings.map((h) => ({
@@ -46,6 +48,7 @@ const directTreasuryHolders: HolderRecord[] = treasuryHoldings.map((h) => ({
   indirectExposureBtc: 0,
   vehicle: h.ticker,
   disclosure: "reported",
+  sourceUrl: h.sourceUrl,
 }))
 
 const directNationHolders: HolderRecord[] = nationsWithHoldings.map((n) => ({
@@ -56,19 +59,17 @@ const directNationHolders: HolderRecord[] = nationsWithHoldings.map((n) => ({
   indirectExposureBtc: 0,
   vehicle: n.status,
   disclosure: "reported",
+  sourceUrl: n.sourceUrl,
 }))
 
 const institutionVehicleHints: Record<string, string> = {
   "Abu Dhabi (Mubadala)": "IBIT",
-  "Norway (NBIM)": "MSTR & ETF basket",
-  "State of Wisconsin": "IBIT",
-  "State of Michigan": "IBIT",
-  "Harvard Endowment": "IBIT",
-  "State of Florida": "FBTC / IBIT basket",
-  "Dartmouth Endowment": "IBIT",
-  "Brown Endowment": "IBIT",
-  "Yale Endowment": "BTC fund basket",
-  "Emory Endowment": "Grayscale BTC",
+  "Norway (NBIM)": "MSTR & Metaplanet",
+  "Harvard Management Co.": "IBIT",
+  "Emory University": "Grayscale BTC + IBIT",
+  "Trustees of Dartmouth College": "IBIT",
+  "State of Michigan": "ARKB",
+  "Brown University": "IBIT",
 }
 
 const indirectInstitutionHolders: HolderRecord[] = institutionalAllocations.map((inst) => ({
@@ -78,8 +79,9 @@ const indirectInstitutionHolders: HolderRecord[] = institutionalAllocations.map(
   controlledBtc: 0,
   indirectExposureBtc: usdMillionsToBtc(inst.amountUsd),
   vehicle: institutionVehicleHints[inst.name] ?? inst.vehicle,
-  note: "Look-through exposure via funds or equity vehicles",
+  note: `Look-through exposure as of ${inst.asOf}`,
   disclosure: "estimated",
+  sourceUrl: inst.sourceUrl,
 }))
 
 const indirectBankHolders: HolderRecord[] = [
@@ -88,20 +90,11 @@ const indirectBankHolders: HolderRecord[] = [
     name: "Goldman Sachs",
     holderType: "Bank",
     controlledBtc: 0,
-    indirectExposureBtc: usdMillionsToBtc(2360),
-    vehicle: "BTC ETF positions",
-    note: "13F ETF exposure translated to BTC equivalent",
+    indirectExposureBtc: usdMillionsToBtc(1060),
+    vehicle: "BTC spot ETFs (IBIT/FBTC)",
+    note: "Q4 2025 13F: ~$1.06B across spot BTC ETFs",
     disclosure: "estimated",
-  },
-  {
-    id: "bank-jpm",
-    name: "JPMorgan",
-    holderType: "Bank",
-    controlledBtc: 0,
-    indirectExposureBtc: usdMillionsToBtc(350),
-    vehicle: "Client-facing BTC products",
-    note: "Conservative exposure estimate for disclosed product footprint",
-    disclosure: "estimated",
+    sourceUrl: "https://www.theblock.co/post/389332/goldman-sachs-trims-bitcoin-etf-exposure-q4",
   },
 ]
 
@@ -129,10 +122,11 @@ export const holderTypeSummary = (["ETF", "Treasury", "Nation", "Institution", "
 })
 
 export const ownershipMethodNotes = [
-  "Network controlled totals count direct BTC holdings only (treasuries, nations, ETF vehicles).",
-  "Look-through institutional and bank exposures are presented separately to avoid double counting ETF-held BTC.",
-  `USD allocations are converted to BTC using an assumed price of $${BTC_PRICE_ASSUMED_USD.toLocaleString()} per BTC for comparability.`,
-  "When exposures are inferred from filings or product footprints, rows are flagged as estimated.",
+  "Controlled BTC counts only directly held coins (treasury wallets, nation-state wallets, ETF custodians).",
+  "Look-through institutional and bank exposures are presented separately so we never double-count ETF-held BTC.",
+  `USD-denominated allocations are converted to BTC using an assumed price of $${BTC_PRICE_ASSUMED_USD.toLocaleString()} per BTC for comparability — the underlying disclosures are in dollars or share counts.`,
+  "Rows flagged as estimated are inferred from 13F filings or other indirect disclosures rather than direct BTC reporting.",
+  "Each row links out to the underlying filing, press release, or aggregator entry that supplies the figure.",
 ]
 
-export const ownershipViewLastUpdated = "2026-03-03"
+export const ownershipViewLastUpdated = "2026-05-02"

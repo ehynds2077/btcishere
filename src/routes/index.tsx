@@ -38,7 +38,6 @@ import { AdoptionTimeline } from "#/components/charts/AdoptionTimeline";
 import { NewsList } from "#/components/NewsList";
 import { useNews } from "#/hooks/useNews";
 import {
-  bankMilestones,
   controlledBtcTotal,
   economicExposureBtcTotal,
   indirectExposureBtcTotal,
@@ -94,14 +93,15 @@ function OverviewPage() {
               Bitcoin is <span className="text-gradient glow-pulse">here.</span>
             </h1>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
-              Over the last few years, almost all major banks, asset managers,
-              and sovereign wealth funds are buying and building on Bitcoin.
+              Over the last few years, most major banks, asset managers, and
+              several sovereign wealth funds have started buying and building
+              on Bitcoin.
             </p>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
-              See the evidence for yourself here. This is not an up to date
-              source of news, but instead, a curated look into Bitcoin adoption
-              and a sample of some of the historic milestones that have been
-              brewing.
+              This is a curated look at that adoption — not a real-time news
+              feed. Every non-obvious figure on the page links back to its
+              original source. Numbers move; click through to the primary
+              filing or report for the latest figure.
             </p>
           </div>
         </section>
@@ -119,17 +119,21 @@ function OverviewPage() {
               {totalUsEtfBtc.toLocaleString()} BTC in US spot ETFs
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              After years of fighting Bitcoin, the SEC finally gave in and
-              approved Bitcoin ETFs (Exchange Traded Fund) for listing on the US
-              stock markets
+              In{" "}
+              <a href="https://www.sec.gov/files/rules/sro/nysearca/2024/34-99306.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                January 2024 the SEC approved 11 spot Bitcoin ETFs
+              </a>{" "}
+              in a single order, after years of denying the same applications.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              While ETFs sacrifice the sovereingty of self-custody, they make it
-              easier for many people to buy Bitcoin. This marked the start of
-              institutional Bitcoin adoption. Now, anyone that owned SPY or QQQ
-              could just as easily buy Bitcoin. The ETFs opened the door to
-              state pension funds, universities, and retirees. Now anyone can
-              get Bitcoin exposure in their 401Ks
+              ETFs sacrifice the sovereignty of self-custody, but they slot
+              Bitcoin into accounts people already use. The opening means a
+              401(k), a state pension, or a university endowment can buy BTC
+              the same way it buys SPY. BlackRock's IBIT alone now holds{" "}
+              <a href="https://finance.yahoo.com/markets/crypto/articles/blackrock-bitcoin-etf-holdings-hit-203000203.html" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                more than 800,000 BTC
+              </a>
+              .
             </p>
           </div>
           <div className="space-y-4">
@@ -152,11 +156,21 @@ function OverviewPage() {
               Pensions, endowments, and sovereign wealth
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Abu Dhabi's Mubadala disclosed a $1B IBIT position. Wisconsin's
-              pension system allocated $321M. Endowments at Harvard, Dartmouth,
-              Brown, Emory, and Yale have positions. Michigan and Florida
-              pension funds as well. These are long-horizon, policy-driven
-              allocators.
+              Abu Dhabi's{" "}
+              <a href="https://www.coindesk.com/markets/2026/02/17/abu-dhabi-funds-bought-the-bitcoin-dip-as-they-increased-exposure-to-blackrock-s-ibit" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                Mubadala lifted its IBIT stake to $630M in Q4 2025
+              </a>
+              . Harvard's endowment{" "}
+              <a href="https://www.theblock.co/post/389996/harvard-bitcoin-ether-etf-holdings" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                disclosed a $443M IBIT position
+              </a>
+              {" "}before trimming back. Emory, Dartmouth, and Brown have all
+              shown up in 13F filings. Wisconsin's pension was first to disclose
+              a spot-ETF stake — and{" "}
+              <a href="https://www.coindesk.com/markets/2025/05/16/wisconsin-sells-entire-350m-spot-bitcoin-etf-stake" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                fully sold it in Q1 2025
+              </a>
+              , a reminder that institutional flows go both ways.
             </p>
           </div>
           <div className="space-y-4">
@@ -179,10 +193,16 @@ function OverviewPage() {
             {totalTreasuryBtc.toLocaleString()} BTC on their balance sheets.
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
-            Strategy holds 687,000 BTC. MARA, Twenty One Capital, MetaPlanet,
-            Riot, and Tesla are among the rest. MicroStrategy started the trend
-            in August 2020. Five years later, {treasuryCompanyCount} public
-            companies hold BTC on their balance sheets.
+            Strategy alone holds{" "}
+            <a href="https://www.strategy.com/purchases" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+              818,000 BTC
+            </a>
+            {" "}— more than any spot ETF. MARA, Twenty One Capital, MetaPlanet,
+            Riot, and Tesla are next.{" "}
+            <a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312520225208/d39160d8k.htm" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+              MicroStrategy started the trend in August 2020
+            </a>
+            {" "}with a $250M, 21,454-BTC purchase.
           </p>
           <AnimateInGroup className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             <AnimateInGroupItem>
@@ -214,9 +234,19 @@ function OverviewPage() {
               The banks are coming
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Morgan Stanley just launched their Bitcoin ETF, MSBT. Citi bank
-              announced they were building BTC custody by the end of this year.
-              Huntington bank is hiring for a digital assets manager.
+              Morgan Stanley{" "}
+              <a href="https://www.morganstanley.com/press-releases/msim-enters-with-launch-of-morgan-stanley-bitcoin-trust" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                launched its spot Bitcoin ETF, MSBT
+              </a>
+              {" "}in April 2026.{" "}
+              <a href="https://www.coindesk.com/business/2026/02/27/citi-and-morgan-stanley-expand-bitcoin-and-crypto-custody-trading-and-tokenization-efforts" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                Citi has detailed an institutional BTC custody platform
+              </a>
+              {" "}targeted for a 2026 rollout. Bank of America{" "}
+              <a href="https://www.coindesk.com/business/2025/12/02/bank-of-america-greenlights-wealth-advisors-to-recommend-up-to-4-bitcoin-allocation" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                authorized 15,000 Merrill advisors to recommend up to 4% BTC
+              </a>
+              {" "}as of January 2026.
             </p>
           </div>
           <div className="space-y-4">
@@ -236,13 +266,31 @@ function OverviewPage() {
               The Nations
             </p>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              Governments hold {totalNationBtc.toLocaleString()} BTC
+              Governments hold ~{totalNationBtc.toLocaleString()} BTC
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              The United States holds 207,000 BTC and has proposed a strategic
-              reserve. China holds 194,000 from seizures. The UK holds 61,000.
-              Bhutan mined 13,000 with hydroelectric power. El Salvador made it
-              legal tender and holds 6,100.
+              The US{" "}
+              <a href="https://www.whitehouse.gov/presidential-actions/2025/03/establishment-of-the-strategic-bitcoin-reserve-and-united-states-digital-asset-stockpile/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                established a Strategic Bitcoin Reserve
+              </a>
+              {" "}in March 2025 from on-chain-tracked DOJ seizures (~207K BTC).
+              The UK holds{" "}
+              <a href="https://www.reuters.com/world/uk/uk-woman-pleads-guilty-laundering-bitcoin-chinese-fraud-2025-09-29/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                ~61K BTC seized in the Jian Wen / Zhimin Qian fraud case
+              </a>
+              {" "}— legally pending restitution to victims, not a sovereign
+              reserve. Bhutan mined hydropower BTC since ~2019 but{" "}
+              <a href="https://www.coindesk.com/markets/2026/04/11/bhutan-has-sold-70-of-its-bitcoin-in-18-months-it-may-have-stopped-btc-mining-too" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                has sold ~70% of its stack in the last 18 months
+              </a>
+              . El Salvador's Bitcoin Office still adds to the reserve daily,
+              even after{" "}
+              <a href="https://www.reuters.com/world/americas/el-salvador-congress-approves-bitcoin-law-reform-meet-imf-conditions-2025-01-29/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                legal-tender status was rolled back in January 2025
+              </a>
+              {" "}under the IMF deal. (China's widely cited 194K BTC from the
+              2019 PlusToken seizure has never been confirmed and is reportedly
+              already sold — it is excluded here.)
             </p>
           </div>
           <div className="space-y-4">
@@ -264,11 +312,19 @@ function OverviewPage() {
             Bitcoin-backed yield at {strcMetrics.currentYield}%
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
-            STRC preferred stock pays a Bitcoin-backed dividend that ratcheted
-            from 8% at launch to {strcMetrics.currentYield}%. Over $
-            {strcMetrics.totalRaisedB}B raised so far. Next in the pipeline: the
-            Buck stablecoin, followed by Bitcoin-backed bank accounts. Financial
-            products are being layered directly on top of BTC.
+            <a href="https://www.strategy.com/strc/learn" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+              Strategy's STRC perpetual preferred stock
+            </a>
+            {" "}IPO'd at 8% in July 2025 and has{" "}
+            <a href="https://www.coindesk.com/markets/2026/03/01/strategy-lifts-strc-dividend-to-11-5-as-mstr-extends-monthly-losing-streak-to-8" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+              ratcheted up to {strcMetrics.currentYield}%
+            </a>
+            . Proceeds go almost entirely to buying BTC. The follow-on layer is
+            already live: Buck Labs launched a Strategy-backed{" "}
+            <a href="https://www.coindesk.com/business/2026/01/05/buck-launches-bitcoin-linked-savings-coin-tied-to-michael-saylor-s-strategy" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+              "savings coin" (BUCK) targeting ~7% yield
+            </a>
+            {" "}in January 2026 (note: not a stablecoin, not pegged to $1).
           </p>
         </section>
       </AnimateIn>
@@ -287,12 +343,15 @@ function OverviewPage() {
               21 million. Fixed supply.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Bitcoin's total supply is hard-capped at 21 million by protocol.
-              An estimated 3.7 million are permanently lost. The block reward
-              halves every four years, cutting new issuance each cycle. Against
-              that backdrop, treasuries hold {totalTreasuryBtc.toLocaleString()}{" "}
-              BTC, ETFs hold {totalUsEtfBtc.toLocaleString()}, and governments
-              hold {totalNationBtc.toLocaleString()}.
+              Bitcoin's supply is hard-capped at 21 million by protocol.{" "}
+              <a href="https://www.chainalysis.com/blog/lost-bitcoin/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                Chainalysis estimates ~3–4 million BTC are permanently lost
+              </a>
+              . The block reward halves every 210,000 blocks (~4 years), so
+              new issuance shrinks geometrically. Against that backdrop, the
+              treasuries above hold {totalTreasuryBtc.toLocaleString()} BTC,
+              the US spot ETFs hold {totalUsEtfBtc.toLocaleString()}, and the
+              governments tracked here hold {totalNationBtc.toLocaleString()}.
             </p>
           </div>
           <div className="space-y-5">

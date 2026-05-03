@@ -7,7 +7,8 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts"
-import { usSpotEtfs } from "#/lib/data/index"
+import { ExternalLink } from "lucide-react"
+import { ETF_AGGREGATE_SOURCE, usSpotEtfs } from "#/lib/data/index"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
 import { CHART_COLORS } from "#/lib/constants"
 
@@ -64,6 +65,18 @@ export function EtfBarChart() {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
+        </div>
+        <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
+          <span>Issuer-published holdings, ~May 2026.</span>
+          <a
+            href={ETF_AGGREGATE_SOURCE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-primary hover:underline"
+          >
+            <ExternalLink className="h-3 w-3" />
+            Aggregate flow tracker
+          </a>
         </div>
       </CardContent>
     </Card>

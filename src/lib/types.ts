@@ -15,6 +15,7 @@ export interface TreasuryHolding {
   btcHeld: number
   sector: "treasury-pure" | "miner" | "exchange" | "tech" | "financial" | "other"
   country: string
+  sourceUrl: string
 }
 
 export interface EtfHolding {
@@ -24,6 +25,7 @@ export interface EtfHolding {
   btcHeld?: number
   aumUsd?: number
   region: "us" | "canada" | "europe" | "brazil" | "apac"
+  sourceUrl: string
 }
 
 export interface NationStat {
@@ -32,6 +34,7 @@ export interface NationStat {
   status: string
   btcHeld?: number
   highlight: string
+  sourceUrl: string
 }
 
 export interface InstitutionalAllocation {
@@ -39,6 +42,8 @@ export interface InstitutionalAllocation {
   amountUsd: number
   vehicle: string
   type: string
+  asOf: string
+  sourceUrl: string
 }
 
 export interface BankMilestone {
@@ -46,6 +51,7 @@ export interface BankMilestone {
   event: string
   date: string
   category: string
+  sourceUrl: string
 }
 
 export interface AdoptionEvent {
@@ -53,6 +59,7 @@ export interface AdoptionEvent {
   title: string
   description: string
   category: Category
+  sourceUrl: string
 }
 
 export interface SupplySegment {

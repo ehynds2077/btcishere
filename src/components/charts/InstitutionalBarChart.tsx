@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts"
+import { ExternalLink } from "lucide-react"
 import { institutionalAllocations } from "#/lib/data/index"
 import { Card, CardContent, CardHeader, CardTitle } from "#/components/ui/card"
 import { CHART_COLORS } from "#/lib/constants"
@@ -64,6 +65,25 @@ export function InstitutionalBarChart() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+        <ul className="mt-4 space-y-1.5 text-xs text-muted-foreground">
+          {institutionalAllocations.map((a) => (
+            <li key={a.name} className="flex items-center justify-between gap-2 border-b border-border/40 pb-1.5 last:border-b-0 last:pb-0">
+              <span className="truncate">
+                <span className="text-foreground font-medium">{a.name}</span> · ${a.amountUsd}M {a.vehicle}{" "}
+                <span className="text-muted-foreground/70">(as of {a.asOf})</span>
+              </span>
+              <a
+                href={a.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary hover:underline shrink-0"
+              >
+                <ExternalLink className="h-3 w-3" />
+                Source
+              </a>
+            </li>
+          ))}
+        </ul>
       </CardContent>
     </Card>
   )

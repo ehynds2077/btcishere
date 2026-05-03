@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { useMemo, useState } from "react"
+import { ExternalLink } from "lucide-react"
 import { AnimateIn } from "#/components/AnimateIn"
 import { AnimateInGroup, AnimateInGroupItem } from "#/components/AnimateInGroup"
 import { StatCard } from "#/components/StatCard"
@@ -144,6 +145,7 @@ function HoldersPage() {
                   <th className="px-3 py-2 text-left text-xs text-muted-foreground">Indirect BTC</th>
                   <th className="px-3 py-2 text-left text-xs text-muted-foreground">Total Exposure BTC</th>
                   <th className="px-3 py-2 text-left text-xs text-muted-foreground">Vehicle / Note</th>
+                  <th className="px-3 py-2 text-left text-xs text-muted-foreground">Source</th>
                 </tr>
               </thead>
               <tbody>
@@ -156,6 +158,17 @@ function HoldersPage() {
                     <td className="px-3 py-2 tabular-nums">{row.indirectExposureBtc.toLocaleString()}</td>
                     <td className="px-3 py-2 tabular-nums font-semibold">{(row.controlledBtc + row.indirectExposureBtc).toLocaleString()}</td>
                     <td className="px-3 py-2 text-xs text-muted-foreground">{row.vehicle ?? "-"}{row.disclosure === "estimated" ? " (est.)" : ""}</td>
+                    <td className="px-3 py-2">
+                      <a
+                        href={row.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Source for ${row.name}`}
+                        className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                      >
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>

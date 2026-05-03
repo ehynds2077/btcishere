@@ -19,10 +19,10 @@ export type {
 } from "#/lib/types"
 
 // Re-export all data modules
-export { treasuryHoldings, totalTreasuryBtc, treasurySupplyPct, treasuryCompanyCount, TOTAL_BTC_SUPPLY } from "./treasuries"
-export { usSpotEtfs, internationalEtfs, allEtfs, totalUsEtfBtc, totalCanadaEtfBtc, totalEtfCount, etfByRegion, totalAllEtfBtc } from "./etfs"
-export { nationStats, nationsWithHoldings, totalNationBtc } from "./nations"
-export { institutionalAllocations, totalInstitutionalCapital } from "./institutional"
+export { treasuryHoldings, totalTreasuryBtc, treasurySupplyPct, treasuryCompanyCount, TOTAL_BTC_SUPPLY, TREASURY_AGGREGATE_SOURCE } from "./treasuries"
+export { usSpotEtfs, internationalEtfs, allEtfs, totalUsEtfBtc, totalCanadaEtfBtc, totalEtfCount, etfByRegion, totalAllEtfBtc, ETF_AGGREGATE_SOURCE } from "./etfs"
+export { nationStats, nationsWithHoldings, totalNationBtc, NATION_AGGREGATE_SOURCE } from "./nations"
+export { institutionalAllocations, totalInstitutionalCapital, INSTITUTIONAL_AGGREGATE_SOURCE } from "./institutional"
 export { bankMilestones } from "./banks"
 export { supplySegments, allSupplySegments, circulatingRemainder, CIRCULATING_SUPPLY, UNMINED, halvingSchedule, NEXT_HALVING_DATE } from "./supply"
 export type { HalvingEvent } from "./supply"
@@ -44,5 +44,7 @@ export {
   yieldComparison,
   flywheelSteps,
   productStack,
+  STRC_INFO_SOURCE,
+  STRC_DIVIDEND_SOURCE,
 } from "./money"
 

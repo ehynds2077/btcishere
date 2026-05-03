@@ -10,7 +10,7 @@ import { DividendRateChart } from "#/components/charts/DividendRateChart"
 import { YieldComparison } from "#/components/charts/YieldComparison"
 import { ProductStack } from "#/components/charts/ProductStack"
 import { NewsList } from "#/components/NewsList"
-import { allNews, getNewsByCategory } from "#/lib/news"
+import { getNewsByCategory } from "#/lib/news"
 import {
   bankMilestones,
   totalInstitutionalCapital,
@@ -65,11 +65,26 @@ function AdoptionPage() {
         <section className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr]">
           <div className="space-y-4 lg:sticky lg:top-28">
             <p className="display-kicker">Access</p>
-            <h2 className="text-2xl font-semibold tracking-tight">Bank access went live in 2025</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Bank access opened up across 2025–2026</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Morgan Stanley, Goldman Sachs, JPMorgan, Bank of America, and Citigroup all launched Bitcoin access
-              for clients within the same twelve-month window. The spot ETFs they route through now hold
-              over {totalUsEtfBtc.toLocaleString()} BTC.
+              Morgan Stanley{" "}
+              <a href="https://bitcoinmagazine.com/business/morgan-stanley-opens-bitcoin-access" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                opened spot-ETF access to all wealth clients in October 2025
+              </a>
+              . Bank of America{" "}
+              <a href="https://www.coindesk.com/business/2025/12/02/bank-of-america-greenlights-wealth-advisors-to-recommend-up-to-4-bitcoin-allocation" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                authorized advisors to recommend a 1–4% allocation in January 2026
+              </a>
+              . JPMorgan{" "}
+              <a href="https://fortune.com/2025/12/23/jpmorgan-to-allow-crypto-trading-for-institutional-clients/" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                started exploring direct crypto trading for institutional clients
+              </a>
+              {" "}— and{" "}
+              <a href="https://www.coindesk.com/business/2026/02/27/citi-and-morgan-stanley-expand-bitcoin-and-crypto-custody-trading-and-tokenization-efforts" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                Citi's institutional custody platform is in development for a 2026 launch
+              </a>
+              . The spot ETFs all of them route through now hold over{" "}
+              {totalUsEtfBtc.toLocaleString()} BTC.
             </p>
           </div>
           <div className="space-y-4">
@@ -83,11 +98,22 @@ function AdoptionPage() {
         <section className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr]">
           <div className="space-y-4 lg:sticky lg:top-28">
             <p className="display-kicker">Capital</p>
-            <h2 className="text-2xl font-semibold tracking-tight">Institutional capital is flowing in</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Institutional capital is flowing in (and sometimes out)</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Mubadala (Abu Dhabi) disclosed a $1B IBIT position. Wisconsin's pension system allocated $321M.
-              Endowments at Harvard, Dartmouth, Brown, Emory, and Yale have taken positions. These are policy-driven,
-              long-horizon allocators -- not short-term traders.
+              Mubadala{" "}
+              <a href="https://www.coindesk.com/markets/2026/02/17/abu-dhabi-funds-bought-the-bitcoin-dip-as-they-increased-exposure-to-blackrock-s-ibit" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                lifted its IBIT position to $630M in Q4 2025
+              </a>
+              . Harvard's endowment{" "}
+              <a href="https://www.theblock.co/post/389996/harvard-bitcoin-ether-etf-holdings" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                disclosed $443M in IBIT in Q3 2025 before trimming
+              </a>
+              . Emory, Dartmouth, and Brown have all shown up in 13F filings.
+              Conversely, Wisconsin's pension —{" "}
+              <a href="https://www.coindesk.com/markets/2025/05/16/wisconsin-sells-entire-350m-spot-bitcoin-etf-stake" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                the first state pension to disclose a position
+              </a>
+              {" "}— sold its entire stake in Q1 2025.
             </p>
           </div>
           <div className="space-y-4">
@@ -102,9 +128,21 @@ function AdoptionPage() {
             <p className="display-kicker">Products</p>
             <h2 className="text-2xl font-semibold tracking-tight">Products built on Bitcoin</h2>
             <p className="text-muted-foreground leading-relaxed">
-              STRC preferred stock pays a {strcMetrics.currentYield}% Bitcoin-backed dividend, ratcheted up from 8%
-              at launch. Over ${strcMetrics.totalRaisedB}B raised. Next in the pipeline: the Buck stablecoin, followed
-              by Bitcoin-backed bank accounts.
+              <a href="https://www.strategy.com/strc/learn" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                STRC preferred stock
+              </a>
+              {" "}pays a {strcMetrics.currentYield}% Bitcoin-backed dividend
+              after{" "}
+              <a href="https://www.coindesk.com/markets/2026/03/01/strategy-lifts-strc-dividend-to-11-5-as-mstr-extends-monthly-losing-streak-to-8" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                seven consecutive monthly hikes from its 8% July-2025 launch
+              </a>
+              . Buck Labs's{" "}
+              <a href="https://www.coindesk.com/business/2026/01/05/buck-launches-bitcoin-linked-savings-coin-tied-to-michael-saylor-s-strategy" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
+                BUCK savings coin
+              </a>
+              {" "}is the next layer up — backed by Strategy shares with rewards
+              funded by STRC, targeting ~7% APY (it is not a stablecoin and is
+              not pegged to $1).
             </p>
           </div>
           <div className="space-y-4">
