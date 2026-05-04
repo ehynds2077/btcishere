@@ -16,6 +16,7 @@ export type {
   YieldComparisonItem,
   FlywheelStep,
   ProductLayer,
+  DigitalCreditProduct,
 } from "#/lib/types"
 
 // Re-export all data modules
@@ -47,4 +48,14 @@ export {
   STRC_INFO_SOURCE,
   STRC_DIVIDEND_SOURCE,
 } from "./money"
+export {
+  digitalCreditProducts,
+  strcHistory,
+  STRC_PRICE_SOURCE,
+  BTC_PRICE_SOURCE,
+  STRC_INFO_SOURCE as STRC_LEARN_SOURCE,
+  SATA_INFO_SOURCE,
+  TRUE_NORTH_DASHBOARD,
+} from "./credit"
+export type { StrcMonthly } from "./credit"
 

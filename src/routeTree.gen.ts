@@ -18,6 +18,7 @@ import { Route as HoldersRouteImport } from './routes/holders'
 import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as EtfsRouteImport } from './routes/etfs'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as CreditRouteImport } from './routes/credit'
 import { Route as BanksRouteImport } from './routes/banks'
 import { Route as AdoptionRouteImport } from './routes/adoption'
 import { Route as AboutRouteImport } from './routes/about'
@@ -68,6 +69,11 @@ const DisclaimerRoute = DisclaimerRouteImport.update({
   path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreditRoute = CreditRouteImport.update({
+  id: '/credit',
+  path: '/credit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BanksRoute = BanksRouteImport.update({
   id: '/banks',
   path: '/banks',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/adoption': typeof AdoptionRoute
   '/banks': typeof BanksRoute
+  '/credit': typeof CreditRoute
   '/disclaimer': typeof DisclaimerRoute
   '/etfs': typeof EtfsRoute
   '/evidence': typeof EvidenceRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/adoption': typeof AdoptionRoute
   '/banks': typeof BanksRoute
+  '/credit': typeof CreditRoute
   '/disclaimer': typeof DisclaimerRoute
   '/etfs': typeof EtfsRoute
   '/evidence': typeof EvidenceRoute
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/adoption': typeof AdoptionRoute
   '/banks': typeof BanksRoute
+  '/credit': typeof CreditRoute
   '/disclaimer': typeof DisclaimerRoute
   '/etfs': typeof EtfsRoute
   '/evidence': typeof EvidenceRoute
@@ -142,6 +151,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/adoption'
     | '/banks'
+    | '/credit'
     | '/disclaimer'
     | '/etfs'
     | '/evidence'
@@ -157,6 +167,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/adoption'
     | '/banks'
+    | '/credit'
     | '/disclaimer'
     | '/etfs'
     | '/evidence'
@@ -172,6 +183,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/adoption'
     | '/banks'
+    | '/credit'
     | '/disclaimer'
     | '/etfs'
     | '/evidence'
@@ -188,6 +200,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AdoptionRoute: typeof AdoptionRoute
   BanksRoute: typeof BanksRoute
+  CreditRoute: typeof CreditRoute
   DisclaimerRoute: typeof DisclaimerRoute
   EtfsRoute: typeof EtfsRoute
   EvidenceRoute: typeof EvidenceRoute
@@ -264,6 +277,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/credit': {
+      id: '/credit'
+      path: '/credit'
+      fullPath: '/credit'
+      preLoaderRoute: typeof CreditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/banks': {
       id: '/banks'
       path: '/banks'
@@ -300,6 +320,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdoptionRoute: AdoptionRoute,
   BanksRoute: BanksRoute,
+  CreditRoute: CreditRoute,
   DisclaimerRoute: DisclaimerRoute,
   EtfsRoute: EtfsRoute,
   EvidenceRoute: EvidenceRoute,

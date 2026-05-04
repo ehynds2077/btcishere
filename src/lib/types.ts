@@ -104,3 +104,22 @@ export interface ProductLayer {
   description: string
   status: "live" | "coming"
 }
+
+export interface DigitalCreditProduct {
+  ticker: string
+  name: string
+  issuer: string
+  issuerTicker: string
+  yieldPct: number
+  parValue: number
+  currency: "USD" | "EUR"
+  frequency: "Monthly" | "Quarterly" | "Semi-Monthly"
+  rateType: "Variable" | "Fixed"
+  seniority: number
+  seniorityLabel: string
+  cumulative: boolean
+  convertible: boolean
+  launched: string
+  highlight: string
+  sourceUrl: string
+}
