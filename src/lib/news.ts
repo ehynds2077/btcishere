@@ -174,6 +174,33 @@ const newsData: NewsItem[] = [
     date: "2026-01-05",
     category: "money",
   },
+  {
+    id: "money-4",
+    title: "Strive lifts SATA dividend to 13% and adds 179 BTC",
+    description:
+      "Vivek Ramaswamy's Strive raised the dividend on its SATA Variable Rate Series A perpetual preferred to 13.00% effective April 15, 2026 — its third consecutive monthly hike — and disclosed an additional 179 BTC purchase.",
+    sourceUrl: "https://www.globenewswire.com/news-release/2026/04/15/3274393/0/en/Strive-Announces-Increase-to-SATA-Perpetual-Preferred-Stock-Dividend-Rate-to-13-00-and-Bitcoin-Buy.html",
+    date: "2026-04-15",
+    category: "money",
+  },
+  {
+    id: "money-5",
+    title: "Strategy raises €620M with euro-denominated STRE preferred",
+    description:
+      "Strategy priced a 10% perpetual preferred 'Stream' on the Luxembourg Euro MTF in November 2025, raising €620M ($715M) — its first non-USD instrument and a template for further European Bitcoin-backed credit issuance.",
+    sourceUrl: "https://www.coindesk.com/markets/2025/11/04/strategy-introduces-a-euro-denominated-preferred-stock-stream-following-q3-earnings",
+    date: "2025-11-04",
+    category: "money",
+  },
+  {
+    id: "money-6",
+    title: "Strive buys $50M of Strategy's STRC alongside SATA expansion",
+    description:
+      "Strive disclosed a $50M purchase of Strategy's STRC preferred and additional bitcoin acquisitions, building reserves it says cover roughly 19 years of SATA interest payments.",
+    sourceUrl: "https://www.coindesk.com/markets/2026/03/11/strategy-s-strc-preferred-series-gets-usd50-million-investment-from-fellow-btc-treasury-company-strive",
+    date: "2026-03-11",
+    category: "money",
+  },
 
   // ETFs
   {

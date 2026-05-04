@@ -324,7 +324,11 @@ function OverviewPage() {
             <a href="https://www.coindesk.com/business/2026/01/05/buck-launches-bitcoin-linked-savings-coin-tied-to-michael-saylor-s-strategy" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
               "savings coin" (BUCK) targeting ~7% yield
             </a>
-            {" "}in January 2026 (note: not a stablecoin, not pegged to $1).
+            {" "}in January 2026 (note: not a stablecoin, not pegged to $1).{" "}
+            <Link to="/credit" className="underline decoration-dotted hover:text-foreground">
+              How STRC works
+            </Link>
+            .
           </p>
         </section>
       </AnimateIn>

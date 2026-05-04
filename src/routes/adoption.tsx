@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { AnimateIn } from "#/components/AnimateIn"
 import { AnimateInGroup, AnimateInGroupItem } from "#/components/AnimateInGroup"
 import { StatCard } from "#/components/StatCard"
@@ -145,7 +145,11 @@ function AdoptionPage() {
               {" "}adds another layer: it is backed by Strategy shares, with rewards linked
               indirectly to STRC holdings and a stated target near 7% APY. It is not a stablecoin
               and is not pegged to $1. At the lending layer, banks and other firms are also
-              starting to extend credit against BTC-related collateral, including Bitcoin ETFs.
+              starting to extend credit against BTC-related collateral, including Bitcoin ETFs.{" "}
+              <Link to="/credit" className="underline decoration-dotted hover:text-foreground">
+                How STRC works
+              </Link>
+              .
             </p>
           </div>
           <div className="space-y-4">

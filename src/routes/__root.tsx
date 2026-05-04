@@ -29,6 +29,14 @@ function RootComponent() {
                   </div>
                 </div>
               </Link>
+              <nav className="flex items-center gap-5 text-sm">
+                <Link
+                  to="/credit"
+                  className="text-muted-foreground hover:text-foreground transition-colors no-underline [&.active]:text-foreground"
+                >
+                  Digital credit
+                </Link>
+              </nav>
             </div>
             {/* <nav className="mt-3 -mx-1 px-1 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               <div className="inline-flex gap-2 min-w-full sm:min-w-0">
