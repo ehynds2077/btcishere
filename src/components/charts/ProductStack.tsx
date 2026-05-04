@@ -11,7 +11,7 @@ export function ProductStack() {
     <Card>
       <CardHeader className="pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
-          The product stack
+          Credit and product layers
         </CardTitle>
       </CardHeader>
       <CardContent>

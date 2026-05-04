@@ -125,24 +125,27 @@ function AdoptionPage() {
       <AnimateIn>
         <section className="grid gap-8 lg:grid-cols-[0.94fr_1.06fr]">
           <div className="space-y-4 lg:sticky lg:top-28">
-            <p className="display-kicker">Products</p>
-            <h2 className="text-2xl font-semibold tracking-tight">Products built on Bitcoin</h2>
+            <p className="display-kicker">Credit</p>
+            <h2 className="text-2xl font-semibold tracking-tight">How credit products are being built around Bitcoin</h2>
             <p className="text-muted-foreground leading-relaxed">
               <a href="https://www.strategy.com/strc/learn" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
                 STRC preferred stock
               </a>
-              {" "}pays a {strcMetrics.currentYield}% Bitcoin-backed dividend
-              after{" "}
+              {" "}is a perpetual preferred security issued by Strategy. As of March 2026, its
+              variable dividend rate was set at {strcMetrics.currentYield}% after{" "}
               <a href="https://www.coindesk.com/markets/2026/03/01/strategy-lifts-strc-dividend-to-11-5-as-mstr-extends-monthly-losing-streak-to-8" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
-                seven consecutive monthly hikes from its 8% July-2025 launch
+                seven consecutive monthly increases from its 8% July 2025 launch
               </a>
-              . Buck Labs's{" "}
+              . That makes it an example of a traditional capital-markets instrument being used
+              to raise funds for Bitcoin exposure rather than an ownership claim on Bitcoin itself.
+              {" "}Buck Labs's{" "}
               <a href="https://www.coindesk.com/business/2026/01/05/buck-launches-bitcoin-linked-savings-coin-tied-to-michael-saylor-s-strategy" target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-foreground">
                 BUCK savings coin
               </a>
-              {" "}is the next layer up — backed by Strategy shares with rewards
-              funded by STRC, targeting ~7% APY (it is not a stablecoin and is
-              not pegged to $1).
+              {" "}adds another layer: it is backed by Strategy shares, with rewards linked
+              indirectly to STRC holdings and a stated target near 7% APY. It is not a stablecoin
+              and is not pegged to $1. At the lending layer, banks and other firms are also
+              starting to extend credit against BTC-related collateral, including Bitcoin ETFs.
             </p>
           </div>
           <div className="space-y-4">

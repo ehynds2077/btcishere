@@ -25,7 +25,7 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   institutional: "Institutional",
   treasuries: "Treasuries",
   nations: "Nations",
-  money: "Money",
+  money: "Credit",
   etfs: "ETFs",
 }
 

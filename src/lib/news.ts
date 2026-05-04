@@ -149,27 +149,27 @@ const newsData: NewsItem[] = [
   // Money (STRC)
   {
     id: "money-1",
-    title: "STRC dividend ratchets to 11.5% — seventh hike since launch",
+    title: "STRC dividend rate raised to 11.5% in March 2026",
     description:
-      "Strategy raised the variable rate on its STRC perpetual preferred stock to 11.5% for the March 2026 distribution, the seventh consecutive monthly hike since the security IPO'd in July 2025 at 8%.",
+      "Strategy raised the variable rate on its STRC perpetual preferred stock to 11.5% for the March 2026 distribution. The security launched in July 2025 at 8%, so the change shows how quickly its payout terms have been reset.",
     sourceUrl: "https://www.coindesk.com/markets/2026/03/01/strategy-lifts-strc-dividend-to-11-5-as-mstr-extends-monthly-losing-streak-to-8",
     date: "2026-03-01",
     category: "money",
   },
   {
     id: "money-2",
-    title: "STRC becomes the world's largest preferred stock in under a year",
+    title: "Strategy says STRC grew into one of the largest preferred-stock issues",
     description:
-      "Saylor reported that STRC, IPO'd in July 2025, has grown into the largest preferred stock in the world by market value — funded by retail and institutional yield demand and used to buy BTC.",
+      "According to public comments from Michael Saylor in April 2026, STRC had grown rapidly in market value within its first year. The significance is less the superlative itself than the scale of investor demand for a Bitcoin-linked income security.",
     sourceUrl: "https://news.bitcoin.com/strategys-strc-becomes-worlds-largest-preferred-stock-in-under-one-year-saylor-says/",
     date: "2026-04-15",
     category: "money",
   },
   {
     id: "money-3",
-    title: "Buck Labs launches BUCK 'savings coin' backed by Strategy shares",
+    title: "Buck Labs launches BUCK token backed by Strategy shares",
     description:
-      "Buck Labs introduced BUCK in early 2026 — a yield-bearing token (target ~7% APY) backed by Strategy stock, with rewards funded indirectly by the Buck Foundation's STRC preferred holdings. It is not pegged to $1 and is not marketed as a stablecoin.",
+      "Buck Labs introduced BUCK in early 2026 as a yield-bearing token backed by Strategy stock, with rewards funded indirectly by the Buck Foundation's STRC preferred holdings. It is not pegged to $1 and is not described as a stablecoin.",
     sourceUrl: "https://www.coindesk.com/business/2026/01/05/buck-launches-bitcoin-linked-savings-coin-tied-to-michael-saylor-s-strategy",
     date: "2026-01-05",
     category: "money",

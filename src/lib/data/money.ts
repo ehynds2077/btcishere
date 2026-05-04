@@ -59,8 +59,8 @@ export const flywheelSteps: FlywheelStep[] = [
 // hold a $1 peg — Buck Labs explicitly markets it as a "savings coin"
 // backed by Strategy shares with rewards funded indirectly via STRC.
 export const productStack: ProductLayer[] = [
-  { name: "Bitcoin", description: "Base layer — fixed-supply, decentralized reserve asset", status: "live" },
-  { name: "STRC", description: "Variable-rate perpetual preferred stock at $100 par, currently 11.5% (IPO'd July 2025)", status: "live" },
-  { name: "Buck", description: "Savings coin backed by Strategy shares targeting ~7% yield (launched Jan 2026; not pegged to $1)", status: "live" },
-  { name: "Bitcoin-backed credit", description: "Direct BTC-collateralized lending now offered by JPMorgan and others", status: "live" },
+  { name: "Bitcoin", description: "Base asset: a fixed-supply digital bearer asset with no issuer and no dividend.", status: "live" },
+  { name: "STRC", description: "Perpetual preferred stock issued by Strategy at $100 par; variable dividend rate was 11.5% as of March 2026.", status: "live" },
+  { name: "Buck", description: "Yield-oriented token backed by Strategy shares, with rewards linked indirectly to STRC holdings; not pegged to $1.", status: "live" },
+  { name: "Bitcoin-backed credit", description: "Loans secured by BTC or Bitcoin ETF collateral; lenders can require more collateral or liquidate if values fall.", status: "live" },
 ]
